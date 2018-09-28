@@ -8,3 +8,4 @@
 * [SpringBoot+LDAP](https://www.jianshu.com/p/1749a01443ce)
 * [SpringBoot+Configure Multiple Datasources](https://www.jianshu.com/p/d3318b39a4e4)
 * [SpringBoot+Redis](https://www.jianshu.com/p/5c9233e02e88)
+* [SpringBoot+Flyway](https://www.jianshu.com/p/b9cf294641f8)
