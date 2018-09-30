@@ -10,3 +10,5 @@
 * [SpringBoot+Redis](https://www.jianshu.com/p/5c9233e02e88)
 * [SpringBoot+Flyway](https://www.jianshu.com/p/b9cf294641f8)
 * [SpringBoot+SpringSecurity](https://www.jianshu.com/p/3ba4ec0b568a)
+* [SpringBoot+cache](https://www.jianshu.com/p/b2f022128f9c)
+* [SpringBoot+RabbitMQ](https://www.jianshu.com/p/bae7599b4df0)
