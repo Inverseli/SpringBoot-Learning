@@ -12,3 +12,4 @@
 * [SpringBoot+SpringSecurity](https://www.jianshu.com/p/3ba4ec0b568a)
 * [SpringBoot+cache](https://www.jianshu.com/p/b2f022128f9c)
 * [SpringBoot+RabbitMQ](https://www.jianshu.com/p/bae7599b4df0)
+* [SpringCloud note](https://www.jianshu.com/p/e862b8a8f68d)
