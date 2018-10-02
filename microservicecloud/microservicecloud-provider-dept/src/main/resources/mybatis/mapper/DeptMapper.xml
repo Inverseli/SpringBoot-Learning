@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.inverseli.springcloud.dao.DeptMapper">
+  <insert id="addDept" parameterType="Dept">
+  	insert into dept(dname,db_source) values (#{dname},DATABASE());
+  </insert>
+  <select id="findById" resultType="Dept" parameterType="Long">
+    select depto,dname,db_source from dept where depto=#{deptno};
+  </select>
+  <select id="findAll" resultType="Dept">
+  	select deptno,dname,db_source from dept;
+  </select>
+</mapper>
