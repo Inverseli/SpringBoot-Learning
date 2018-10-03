@@ -22,14 +22,31 @@ public class DeptController {
 	@Autowired
 	private DeptService deptService;
 	
+	/**
+	 * @author liyuhao
+	 * @data 2018年10月3日下午4:38:00
+	 * @description 服务端 - 添加dept人员
+	 */
 	@RequestMapping(value="/dept/add",method=RequestMethod.POST)
 	public boolean add(Dept dept) {
 		return deptService.addDept(dept);
 	}
+	
+	/**
+	 * @author liyuhao
+	 * @data 2018年10月3日下午4:38:44
+	 * @description 服务端 - 根据id获得dept人员
+	 */
 	@GetMapping("/dept/list/{id}")
 	public Dept get(@PathVariable("id") Long id) {
 		return deptService.findById(id);
 	}
+	
+	/**
+	 * @author liyuhao
+	 * @data 2018年10月3日下午4:39:37
+	 * @description 服务端 - 得到所有的dept人员
+	 */
 	@GetMapping("/dept/all")
 	public List<Dept> getAll() {
 		return deptService.findAll();
