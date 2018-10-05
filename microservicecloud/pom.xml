@@ -19,7 +19,8 @@
   		<dependency>
   			<groupId>org.springframework.cloud</groupId>
   			<artifactId>spring-cloud-dependencies</artifactId>
-  			<version>Dalston.SR1</version>
+            <version>Finchley.SR1</version>
+            <type>pom</type>
   			<scope>import</scope>
   		</dependency>
   		<dependency>
@@ -66,5 +67,6 @@
   	<module>microservicecloud-api</module>
   	<module>microservicecloud-provider-dept</module>
   	<module>microservicecloud-consumer-dept</module>
+  	<module>microservicecloud-eureka</module>
   </modules>
 </project>
