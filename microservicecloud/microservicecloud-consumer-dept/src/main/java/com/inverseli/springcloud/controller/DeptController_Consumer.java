@@ -59,4 +59,16 @@ public class DeptController_Consumer {
 				REST_URL_PREFIX + "/dept/all", 
 				List.class);
 	}
+	
+	/**
+	 * @author liyuhao
+	 * @data 2018年10月11日下午2:01:46
+	 * @description
+	 */
+	@RequestMapping(value="/consumer/dept/discovery")
+	public Object discovery() {
+		return restTemplate.getForObject(
+				REST_URL_PREFIX + "/dept/discovery", 
+				Object.class);
+	}
 }

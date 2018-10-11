@@ -63,10 +63,33 @@
   		</dependency>
   	</dependencies>
   </dependencyManagement>
+  <build>
+  	<finalName>microservicecloud</finalName>
+  	<resources>
+  		<resource>
+  			<directory>src/main/resources</directory>
+  			<filtering>true</filtering>
+  		</resource>
+  	</resources>
+  	<plugins>
+  		<plugin>
+  			<groupId>org.apache.maven.plugins</groupId>
+  			<artifactId>maven-resources-plugin</artifactId>
+  			<configuration>
+  				<delimiters>
+  					<delimiter>$</delimiter>
+  				</delimiters>
+  			</configuration>
+  		</plugin>
+  	</plugins>
+  </build>
+  
   <modules>
   	<module>microservicecloud-api</module>
   	<module>microservicecloud-provider-dept</module>
   	<module>microservicecloud-consumer-dept</module>
   	<module>microservicecloud-eureka</module>
+  	<module>microservicecloud-eureka-01</module>
+  	<module>microservicecloud-eureka-02</module>
   </modules>
 </project>

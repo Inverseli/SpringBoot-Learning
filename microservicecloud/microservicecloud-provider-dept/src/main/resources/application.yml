@@ -6,6 +6,8 @@ mybatis:
   mapperLocations: classpath:mybatis/mapper/*.xml
   
 spring:
+  application:
+    name: microservicecloud-dept
   datasource:
       # alibaba连接池
       type: com.alibaba.druid.pool.DruidDataSource
@@ -20,3 +22,17 @@ spring:
       initial-size: 5
       max-total: 5
       max-waitmillis: 200
+
+eureka:
+  client: #客户端注册进eureka服务列表
+    serviceUrl:
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+  instance:
+    instance-id: microservicecloud-dept8001
+    prefer-ip-address: true # 访问路径可显示ip地址
+
+info:
+  app.name: inverseli-microservicecloud
+  company.name: www.inverseli.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
