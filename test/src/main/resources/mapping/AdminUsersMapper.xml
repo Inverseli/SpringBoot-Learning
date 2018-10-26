@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.inverseli.test.dao.AdminUsersMapper" >
+  <resultMap id="BaseResultMap" type="com.inverseli.test.pojo.AdminUsers" >
+    <id column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="user_name" property="userName" jdbcType="VARCHAR" />
+    <result column="user_pwd" property="userPwd" jdbcType="VARCHAR" />
+    <result column="user_email" property="userEmail" jdbcType="VARCHAR" />
+    <result column="user_mobile" property="userMobile" jdbcType="VARCHAR" />
+    <result column="user_openid" property="userOpenid" jdbcType="VARCHAR" />
+    <result column="user_registertime" property="userRegistertime" jdbcType="TIMESTAMP" />
+    <result column="user_registerip" property="userRegisterip" jdbcType="VARCHAR" />
+    <result column="user_lastlogintime" property="userLastlogintime" jdbcType="TIMESTAMP" />
+    <result column="user_lastloginip" property="userLastloginip" jdbcType="VARCHAR" />
+    <result column="user_status" property="userStatus" jdbcType="INTEGER" />
+    <result column="role_id" property="roleId" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    user_id, user_name, user_pwd, user_email, user_mobile, user_openid, user_registertime, 
+    user_registerip, user_lastlogintime, user_lastloginip, user_status, role_id
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from admin_users
+    where user_id = #{userId,jdbcType=INTEGER}
+  </select>
+
+  <select id="selectAll" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from admin_users
+  </select>
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from admin_users
+    where user_id = #{userId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.inverseli.test.pojo.AdminUsers" >
+    insert into admin_users (user_id, user_name, user_pwd, 
+      user_email, user_mobile, user_openid, 
+      user_registertime, user_registerip, user_lastlogintime, 
+      user_lastloginip, user_status, role_id
+      )
+    values (#{userId,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, #{userPwd,jdbcType=VARCHAR}, 
+      #{userEmail,jdbcType=VARCHAR}, #{userMobile,jdbcType=VARCHAR}, #{userOpenid,jdbcType=VARCHAR}, 
+      #{userRegistertime,jdbcType=TIMESTAMP}, #{userRegisterip,jdbcType=VARCHAR}, #{userLastlogintime,jdbcType=TIMESTAMP}, 
+      #{userLastloginip,jdbcType=VARCHAR}, #{userStatus,jdbcType=INTEGER}, #{roleId,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.inverseli.test.pojo.AdminUsers" >
+    insert into admin_users
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="userName != null" >
+        user_name,
+      </if>
+      <if test="userPwd != null" >
+        user_pwd,
+      </if>
+      <if test="userEmail != null" >
+        user_email,
+      </if>
+      <if test="userMobile != null" >
+        user_mobile,
+      </if>
+      <if test="userOpenid != null" >
+        user_openid,
+      </if>
+      <if test="userRegistertime != null" >
+        user_registertime,
+      </if>
+      <if test="userRegisterip != null" >
+        user_registerip,
+      </if>
+      <if test="userLastlogintime != null" >
+        user_lastlogintime,
+      </if>
+      <if test="userLastloginip != null" >
+        user_lastloginip,
+      </if>
+      <if test="userStatus != null" >
+        user_status,
+      </if>
+      <if test="roleId != null" >
+        role_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="userId != null" >
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="userName != null" >
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="userPwd != null" >
+        #{userPwd,jdbcType=VARCHAR},
+      </if>
+      <if test="userEmail != null" >
+        #{userEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="userMobile != null" >
+        #{userMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="userOpenid != null" >
+        #{userOpenid,jdbcType=VARCHAR},
+      </if>
+      <if test="userRegistertime != null" >
+        #{userRegistertime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="userRegisterip != null" >
+        #{userRegisterip,jdbcType=VARCHAR},
+      </if>
+      <if test="userLastlogintime != null" >
+        #{userLastlogintime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="userLastloginip != null" >
+        #{userLastloginip,jdbcType=VARCHAR},
+      </if>
+      <if test="userStatus != null" >
+        #{userStatus,jdbcType=INTEGER},
+      </if>
+      <if test="roleId != null" >
+        #{roleId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.inverseli.test.pojo.AdminUsers" >
+    update admin_users
+    <set >
+      <if test="userName != null" >
+        user_name = #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="userPwd != null" >
+        user_pwd = #{userPwd,jdbcType=VARCHAR},
+      </if>
+      <if test="userEmail != null" >
+        user_email = #{userEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="userMobile != null" >
+        user_mobile = #{userMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="userOpenid != null" >
+        user_openid = #{userOpenid,jdbcType=VARCHAR},
+      </if>
+      <if test="userRegistertime != null" >
+        user_registertime = #{userRegistertime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="userRegisterip != null" >
+        user_registerip = #{userRegisterip,jdbcType=VARCHAR},
+      </if>
+      <if test="userLastlogintime != null" >
+        user_lastlogintime = #{userLastlogintime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="userLastloginip != null" >
+        user_lastloginip = #{userLastloginip,jdbcType=VARCHAR},
+      </if>
+      <if test="userStatus != null" >
+        user_status = #{userStatus,jdbcType=INTEGER},
+      </if>
+      <if test="roleId != null" >
+        role_id = #{roleId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where user_id = #{userId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.inverseli.test.pojo.AdminUsers" >
+    update admin_users
+    set user_name = #{userName,jdbcType=VARCHAR},
+      user_pwd = #{userPwd,jdbcType=VARCHAR},
+      user_email = #{userEmail,jdbcType=VARCHAR},
+      user_mobile = #{userMobile,jdbcType=VARCHAR},
+      user_openid = #{userOpenid,jdbcType=VARCHAR},
+      user_registertime = #{userRegistertime,jdbcType=TIMESTAMP},
+      user_registerip = #{userRegisterip,jdbcType=VARCHAR},
+      user_lastlogintime = #{userLastlogintime,jdbcType=TIMESTAMP},
+      user_lastloginip = #{userLastloginip,jdbcType=VARCHAR},
+      user_status = #{userStatus,jdbcType=INTEGER},
+      role_id = #{roleId,jdbcType=INTEGER}
+    where user_id = #{userId,jdbcType=INTEGER}
+  </update>
+</mapper>
